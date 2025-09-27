@@ -1,0 +1,203 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1.0s ease-in-out; /* Smooth transition for background changes */
+    margin: 0;
+}
+
+/* Base background (default for body, will be overridden by level-specific classes) */
+.body {
+    background: linear-gradient(to top, #c6e4ee, #a8dadc); /* Default Mountain Sky Gradient */
+}
+
+/* Level Specific Backgrounds */
+.level-bg-0 { background-image: url('images/base-camp.jpg'); }
+.level-bg-1 { background-image: url('images/first-ascent.jpg'); }
+.level-bg-2 { background-image: url('images/the-ridge.jpg'); }
+.level-bg-3 { background-image: url('images/high-plateau.jpg'); }
+.level-bg-4 { background-image: url('images/windy-pass.jpg'); }
+.level-bg-5 { background-image: url('images/the-snow-line.jpg'); }
+.level-bg-6 { background-image: url('images/the-boulder-field.jpg'); }
+.level-bg-7 { background-image: url('images/thin-air.jpg'); }
+.level-bg-8 { background-image: url('images/final-push.jpg'); }
+.level-bg-9 { background-image: url('images/the-summit.jpg'); }
+
+
+.game-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+}
+
+h1 {
+    color: #2b4162;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.header-info {
+    font-size: 1.1em;
+    color: #457b9d;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.score-board {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    padding: 10px;
+    border: 2px solid #a8dadc;
+    border-radius: 8px;
+    background-color: #f1faee;
+}
+
+.problem-area p {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 25px 0;
+    color: #1d3557; 
+}
+
+#answer-input {
+    padding: 10px;
+    font-size: 1.6em;
+    width: 100px;
+    text-align: center;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    margin-right: 15px;
+    transition: border-color 0.3s;
+}
+#answer-input:focus {
+    border-color: #457b9d;
+    outline: none;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.1s;
+    margin: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px #1d3557;
+}
+
+#check-button {
+    background-color: #e63946;
+    color: white;
+}
+#check-button:hover {
+    background-color: #c9323c;
+    transform: translateY(1px);
+    box-shadow: 0 3px #1d3557;
+}
+
+#next-button, #start-button, #modal-action-button { /* Added #start-button and #modal-action-button */
+    background-color: #457b9d;
+    color: white;
+    box-shadow: 0 4px #1d3557;
+}
+#next-button:hover, #start-button:hover, #modal-action-button:hover { /* Added #start-button and #modal-action-button */
+    background-color: #3b6b8b;
+    transform: translateY(1px);
+    box-shadow: 0 3px #1d3557;
+}
+
+
+.feedback {
+    margin: 20px 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    min-height: 35px;
+}
+
+.correct {
+    color: #38a3a5;
+}
+
+.incorrect {
+    color: #e63946;
+}
+
+.hidden {
+    display: none !important; /* !important to ensure it overrides other display properties */
+}
+
+/* Modal Styles for Start Screen and Level Completion */
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border-radius: 15px;
+}
+
+.modal-content {
+    background-color: #f1faee;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    color: #1d3557;
+    margin-top: 0;
+}
+
+.start-message {
+    font-size: 1.1em;
+    color: #457b9d;
+    margin-bottom: 20px;
+}
+
+.character-img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 50%; /* Make it round if desired */
+    border: 3px solid #457b9d;
+}
+
+.reward-message {
+    font-size: 1.1em;
+    color: #457b9d;
+    margin-top: 20px;
+}
+
+.gear-item {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #e63946;
+    margin: 5px 0 20px 0;
+}
+
+/* Style for restart button if needed, otherwise it uses modal-action-button styles */
+.restart-button {
+    background-color: #f0ad4e !important; /* Orange */
+    box-shadow: 0 4px #d89b3f !important;
+}
+.restart-button:hover {
+    background-color: #d89b3f !important;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Mountain Climbers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="level-bg-0"> 
+    <div class="game-container">
+        <h1>⛰️ Math Mountain Climbers 🧮</h1>
+
+        <div class="header-info">
+            <span id="level-name">Base Camp</span> | 
+            Level: <span id="level-num">1</span> of 10 | 
+            Questions: <span id="question-tracker">0/10</span>
+        </div>
+        <div class="score-board">
+            Current Score: <span id="score">0</span>
+        </div>
+
+        <div class="problem-area">
+            <p id="problem">Loading...</p>
+            <input type="number" id="answer-input" placeholder="Your Answer" autofocus inputmode="numeric">
+            <button id="check-button">Check</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+        <button id="next-button" class="hidden">Next Question</button>
+        
+        <div id="start-game-modal" class="modal">
+            <div class="modal-content">
+                <h2>Welcome, Climber!</h2>
+                <p class="start-message">Solve these math problems to help Mountain Man Sam reach the peak! Complete each level to collect important gear along your trek.</p>
+                <img src="images/mountain-man-sam.png" alt="Mountain Man Sam" class="character-img">
+                <button id="start-button">Start Game</button>
+            </div>
+        </div>
+
+        <div id="level-intro-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="intro-level-title">Level 1</h2>
+                <p class="intro-message">You've reached <span id="intro-level-name" class="gear-item">Base Camp</span>!</p>
+                <p class="intro-instruction">Get ready to tackle 10 new multiplication problems to earn your gear!</p>
+                <button id="start-level-button">Start Level</button>
+            </div>
+        </div>
+        
+        <div id="level-up-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title">Level Complete!</h2>
+                <p id="modal-message"></p>
+                <p class="reward-message" id="reward-message-text">Your reward for reaching the next altitude is:</p>
+                <p id="reward-gear" class="gear-item">Boots!</p>
+                <button id="modal-action-button">Continue Climbing!</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <audio id="game-music" loop>
+        <source src="adventure_theme.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
